@@ -331,27 +331,27 @@ O que são tokens? O que é uma context window? Por que modelos erram com tanta 
 
 ## Referências
 
-1. Miller, G.A. — "The Magical Number Seven, Plus or Minus Two" (1956)
-2. Mark, G. et al. — "The Cost of Interrupted Work" (2008), University of California
+1. [Miller, G.A. — "The Magical Number Seven, Plus or Minus Two" (1956)](https://psycnet.apa.org/record/1957-02914-001)
+2. [Mark, G. et al. — "The Cost of Interrupted Work: More Speed and Stress" (2008)](https://dl.acm.org/doi/10.1145/1357054.1357072) — ACM CHI 2008
 3. [GitHub Copilot](https://github.com/features/copilot) — documentation
 4. [ChatGPT](https://openai.com/blog/chatgpt) — OpenAI launch announcement (November 2022)
-5. Cursor / Anysphere — Bloomberg reporting on growth trajectory
+5. [Cursor / Anysphere — CNBC (November 2025)](https://www.cnbc.com/2025/11/13/cursor-ai-startup-funding-round-valuation.html) — $1B+ ARR, $29.3B valuation
 6. [OpenAI Function Calling](https://openai.com/index/function-calling-and-other-api-updates/) — API update (June 2023)
-7. Andrew Ng — "Agentic AI" newsletter and Sequoia AI Ascent talk (2023-2024)
+7. [Andrew Ng — "Agentic Design Patterns" (2024)](https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance/) — The Batch newsletter; [Sequoia AI Ascent talk](https://www.youtube.com/watch?v=sal78ACtGTc)
 8. [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) — Anthropic (November 2024)
 9. [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) — Anthropic (December 2024)
 10. [SWE-bench](https://www.swebench.com/) — Princeton NLP (ICLR 2024)
-11. Tweag engineering blog — professional agentic coding
-12. Market revenue data — agentic coding market, 2025
-13. Google — CFO Anat Ashkenazi, Q4 2025 earnings call
+11. [Tweag — "Introduction to Agentic Coding" (2025)](https://www.tweag.io/blog/2025-10-23-agentic-coding-intro/); [Agentic Coding Handbook](https://tweag.github.io/agentic-coding-handbook/)
+12. [Mordor Intelligence — AI Code Tools Market Report (2025)](https://www.mordorintelligence.com/industry-reports/artificial-intelligence-code-tools-market) — US$ 7.37B market size
+13. [Alphabet Q4 2025 Earnings Call (February 2026)](https://www.fool.com/earnings/call-transcripts/2026/02/04/alphabet-googl-q4-2025-earnings-call-transcript/) — CFO Anat Ashkenazi: "about 50% of our code is written by coding agents"
 14. [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/)
 15. [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — Anthropic documentation
-16. [GitHub Blog](https://github.blog/) — Copilot adoption metrics
+16. [GitHub Blog — "Copilot: Faster, smarter, and built for how you work now" (October 2025)](https://github.blog/ai-and-ml/github-copilot/copilot-faster-smarter-and-built-for-how-you-work-now/) — 20M+ users, 1.2M PRs/month
 17. [Aider](https://github.com/paul-gauthier/aider) — GitHub repository
 18. [OpenCode](https://github.com/nichochar/opencode) — GitHub repository
 19. [OpenAI Codex CLI](https://github.com/openai/codex) — GitHub repository
-20. Anthropic Claude — 54% of coding LLM API calls (industry analysis, 2025)
-21. METR — "Measuring the Impact of Early AI Assistance on Developer Productivity" (2025)
-22. Veracode — "State of AI-Generated Code Security" (2025)
-23. Gartner — agentic AI project predictions (2025)
+20. [Menlo Ventures — "2025: The State of Generative AI in the Enterprise" (December 2025)](https://menlovc.com/perspective/2025-the-state-of-generative-ai-in-the-enterprise/) — Claude: 54% coding market share
+21. [METR — "Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity" (2025)](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/); [arXiv](https://arxiv.org/abs/2507.09089)
+22. [Veracode — "GenAI and Code Security: What You Need to Know" (2025)](https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report/)
+23. [Gartner — "Over 40% of Agentic AI Projects Will Be Canceled by End of 2027" (June 2025)](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027)
 24. [DORA State of DevOps Report 2025](https://dora.dev/) — Google
