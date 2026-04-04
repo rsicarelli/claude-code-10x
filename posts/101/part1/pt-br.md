@@ -1,17 +1,25 @@
+# Claude Code 101: Introdução à Programação Agêntica
+
+> Por [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-101 Parte 1
+>
+> 🔗 dev.to/rsicarelli/... <!-- link adicionado após publicação -->
+
 > * [O desenvolvimento de software como conhecemos](#o-desenvolvimento-de-software-como-conhecemos)
 > * [A era da assistência por IA](#a-era-da-assistência-por-ia)
-> * [De assistente a agente](#de-assistente-a-agente--a-evolução-em-quatro-fases)
+> * [De assistente a agente](#de-assistente-a-agente)
 > * [O ecossistema de ferramentas agênticas](#o-ecossistema-de-ferramentas-agênticas)
 > * [Programação agêntica — a mudança de paradigma](#programação-agêntica--a-mudança-de-paradigma)
 > * [Considerações finais](#considerações-finais)
 
-Tem um momento específico em que você percebe que alguma coisa mudou.
+Setembro de 2025. Eu estava tocando a atualização de uma dependência crítica num app mobile com milhões de usuários. O tipo de mudança que quebra testes em cascata. O prazo era Outubro: se não ficasse pronto, o app não subia pra loja.
 
-Talvez tenha sido quando um colega digitou um parágrafo em um terminal e, poucos minutos depois, tinha um pull request magicamente aberto. Vários arquivos alterados, testes passando, dois bugs corrigidos no caminho. Sem tocar no editor. Sem abrir o navegador. Sem escrever código.
+O problema: quase 10.000 testes precisavam ser adaptados pra nova versão. Código de mais de 20 times, espalhado por centenas de módulos. 
 
-E você ainda estava lendo o ticket 🫠.
+Pensei "e se eu der uma chance pra essas ferramentas de IA que todo mundo fala?" Depois de alguns vídeos e documentação, coloquei quatro terminais rodando em paralelo com Claude Code, cada um migrando uma fatia dos testes. Em uma semana: 2.000+ arquivos alterados, 50 mil linhas de código, 85% migrado de primeira. Na semana seguinte, pente fino no restante.
 
-Pra quem constrói software, essa cena levanta uma pergunta inevitável: o que exatamente aconteceu ali? E mais importante, o que muda pra quem está do outro lado do tela?
+Quando mergiei tudo com aprovação dos times responsáveis, uma coisa ficou clara: eu **nunca** teria feito aquilo sozinho. Não em duas semanas, talvez nem em dois meses. Era cognitivamente impossível.
+
+Foi aí que eu entendi que alguma coisa tinha mudado de verdade: meu papel tinha mudado, e eu precisava entender como isso funciona por dentro.
 
 Este é o primeiro artigo da série **Claude Code 101**. Ao longo dela, vamos desmontar o que está por trás da **programação agêntica**: de onde veio, como funciona, quais ferramentas existem e o que você precisa aprender pra usar isso de verdade. Vamos construir juntos um modelo mental (a **analogia da fábrica**) e conhecer os três pilares que sustentam tudo: prompt engineering, context engineering e harness engineering.
 
@@ -21,27 +29,11 @@ Este é o primeiro artigo da série **Claude Code 101**. Ao longo dela, vamos de
 
 O fluxo que todo dev conhece: ler requisito, projetar solução, escrever código, rodar testes, corrigir bugs, fazer deploy. Nada acontece sem que você esteja ativamente envolvido. É você quem lê a documentação, quem busca no (finado 😅) Stack Overflow, quem mantém o contexto do projeto na cabeça, quem digita cada letra.
 
-O software só avança quando você está sentado na frente da tela, trabalhando nele.
-
-```mermaid
-flowchart LR
-    A["Dev lê requisitos"] --> B["Dev projeta solução"]
-    B --> C["Dev escreve código"]
-    C --> D["Dev roda testes"]
-    D --> E{Passou?}
-    E -->|Não| F["Dev corrige bugs"]
-    F --> C
-    E -->|Sim| G["Dev faz commit"]
-    G --> H["Dev abre PR"]
-    H --> I["Code review"]
-    I --> J["Deploy"]
-```
-
-Repare: cada caixa do diagrama começa com "Dev". Quem desenvolve é quem executa, em todas elas. Cada linha de código é um produto montado à mão, e o ritmo de produção depende da velocidade dos seus dedos e da capacidade da sua memória.
+O software só avança quando você está sentado na frente da tela, trabalhando nele. Cada linha de código é um produto montado à mão, e o ritmo de produção depende da velocidade dos seus dedos e da capacidade da sua memória.
 
 ### O gargalo somos nós
 
-A ciência cognitiva tem dados desconfortáveis pra gente. Nossa memória de trabalho retém, em média, **7 itens ao mesmo tempo** [[1]](#referências). Depois de uma interrupção (aquele tapinha no ombro, aquela mensagem no Slack) levamos em média **23 minutos pra retomar o foco** [[2]](#referências). E se você parar pra medir, vai perceber que passa apenas uns **30% do tempo efetivamente escrevendo código**. O resto é leitura, navegação, debugging e reuniões.
+A ciência cognitiva tem dados desconfortáveis pra gente. Nossa memória de trabalho retém, em média, 7 itens ao mesmo tempo [[1]](#referências). Depois de uma interrupção (aquele tapinha no ombro, aquela mensagem no Slack) levamos em média 23 minutos pra retomar o foco [[2]](#referências). E se você parar pra medir, vai perceber que passa apenas uns 30% do tempo efetivamente escrevendo código. O resto é leitura, navegação, debugging e reuniões.
 
 O gargalo não é só o compilador. Não é o CI. Não é o servidor. O gargalo é a gente.
 
@@ -88,6 +80,8 @@ sequenceDiagram
     Note over Dev: Em ambos: quem desenvolve<br/>permanece como executor central
 ```
 
+![Autocomplete vs Chat](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-01-autocomplete-vs-chat.png?raw=true)
+
 ### Por que assistência não bastava
 
 No fim das contas, os dois paradigmas esbarram no mesmo problema: **a IA não é agêntica** (ou seja, não tem capacidade de agir por conta própria). Não lê seu projeto. Não roda comandos. Não executa testes. Não itera sobre erros.
@@ -103,25 +97,23 @@ Em 2024, a pergunta natural veio: **e se a IA pudesse fazer mais do que sugerir?
 Olhando pra trás, a evolução das ferramentas de IA para código segue quatro fases bem definidas. Cada fase é como um upgrade na fábrica: primeiro vem a esteira, depois o consultor, depois máquinas melhores, até chegar nas que operam sozinhas.
 
 ```mermaid
-timeline
-    title A evolução da codificação com IA
-    section Fase 1
-        Code Completion (2021-2022) : Copilot v1, TabNine
-                                    : IA sugere a próxima linha
-                                    : Autonomia mínima
-    section Fase 2
-        Chat (2022-2023) : ChatGPT, Claude
-                         : IA conversa sobre código
-                         : Sem acesso ao projeto
-    section Fase 3
-        Multi-arquivo (2024) : Cursor, Copilot Chat
-                             : IA edita múltiplos arquivos
-                             : Orquestração humana
-    section Fase 4
-        Agêntico (2024+) : Claude Code, Agent Mode
-                         : IA planeja e executa
-                         : Autonomia com supervisão
+flowchart TD
+    subgraph F1["Fase 1: Code Completion (2021-2022)"]
+        A1["Copilot v1, TabNine\nIA sugere a próxima linha\nAutonomia mínima"]
+    end
+    subgraph F2["Fase 2: Chat (2022-2023)"]
+        A2["ChatGPT, Claude\nIA conversa sobre código\nSem acesso ao projeto"]
+    end
+    subgraph F3["Fase 3: Multi-arquivo (2024)"]
+        A3["Cursor, Copilot Chat\nIA edita múltiplos arquivos\nOrquestração humana"]
+    end
+    subgraph F4["Fase 4: Agêntico (2024+)"]
+        A4["Claude Code, Agent Mode\nIA planeja e executa\nAutonomia com supervisão"]
+    end
+    F1 --> F2 --> F3 --> F4
 ```
+
+![A evolução da codificação com IA](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-02-evolution-timeline.png?raw=true)
 
 As fases 1 e 2 já vimos. O salto real começa na fase 3.
 
@@ -164,9 +156,11 @@ flowchart TD
     G --> H["👨‍💻 Dev revisa e aprova"]
 ```
 
+![O loop agêntico](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-03-agentic-loop.png?raw=true)
+
 Aqui é onde a analogia da fábrica muda completamente. Você não está mais na linha de produção apertando parafuso e movendo peça. Agora você **projeta** a fábrica. Programa as máquinas, configura os controles de qualidade, supervisiona a produção. Os agentes executam, reportam problemas e se autocorrigem. Sua produtividade deixa de ser limitada pela velocidade das suas mãos e passa a depender da qualidade das suas instruções.
 
-Como a Anthropic resumiu: o desenvolvimento vai *"de 'escrever código, rodar testes, ler erros, corrigir, repetir' para 'definir objetivo, revisar mudanças, aprovar implementação'."*
+Como a Anthropic resumiu: o desenvolvimento vai "de *'escrever código, rodar testes, ler erros, corrigir, repetir'* para *'definir objetivo, revisar mudanças, aprovar implementação.'*"
 
 ### A linha do tempo completa
 
@@ -190,7 +184,7 @@ Programação agêntica profissional, como o blog de engenharia da Tweag define,
 
 ## O ecossistema de ferramentas agênticas
 
-Não falta ferramenta nesse espaço. Em 2025, ferramentas de IA pra código geraram **US$ 7,37 bilhões em receita**, o equivalente a **55% de todo o investimento empresarial em IA** [[12]](#referências). O Google já atribui **50% do seu código** a agentes [[13]](#referências). E **84% de devs** dizem que usam ou planejam usar ferramentas de IA [[14]](#referências).
+Não falta ferramenta nesse espaço. Em 2025, ferramentas de IA pra código geraram **US$ 7,37 bilhões em receita**, o equivalente a 55% de todo o investimento empresarial em IA [[12]](#referências). O Google já atribui 50% do seu código a agentes [[13]](#referências). E 84% de devs dizem que usam ou planejam usar ferramentas de IA [[14]](#referências).
 
 As ferramentas se dividem em três categorias: **CLI** (terminal: Claude Code, Codex CLI, Cursor CLI, Aider, OpenCode), **IDE** (editor com IA integrada: Cursor, [Windsurf](https://windsurf.com/)) e **híbrido** (plugin + nuvem: GitHub Copilot).
 
@@ -250,9 +244,11 @@ flowchart LR
     antes ~~~ depois
 ```
 
+![Antes vs Depois](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-04-before-after.png?raw=true)
+
 Eu sei o que você pode estar pensando: "então a IA faz o trabalho e eu fico... fazendo o quê?"
 
-Essa é a pergunta errada. Pensa assim: quando surgiu o compilador, ninguém mais precisou escrever Assembly na mão. Quem programava não ficou sem função. Subiu um nível de abstração. Passou a pensar em lógica de negócio em vez de registradores de memória. Ficou *mais* produtivo, *mais* estratégico, *mais* valioso.
+A pergunta melhor talvez seja: fazendo o quê de *diferente*. Quando surgiu o compilador, ninguém mais precisou escrever Assembly na mão. Quem programava não ficou sem função. Subiu um nível de abstração. Passou a pensar em lógica de negócio em vez de registradores de memória. Ficou *mais* produtivo, *mais* estratégico, *mais* valioso.
 
 A mesma coisa está acontecendo agora: você não está sendo substituído, está subindo de nível. Quem projeta a fábrica não é menos importante que quem opera, pelo contrário, mas as habilidades são outras.
 
@@ -294,6 +290,8 @@ block-beta
     C --> bottom
     H --> bottom
 ```
+
+![Os três pilares](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-05-three-pillars.png?raw=true)
 
 ### Os números — bons e ruins
 
