@@ -227,7 +227,7 @@ Na programação agêntica, o papel muda. Você define o objetivo, fornece conte
 
 ```mermaid
 flowchart LR
-    subgraph antes ["Antes: Desenvolvimento Tradicional"]
+    subgraph antes ["Antes"]
         direction TB
         A1["Dev lê requisitos"] --> A2["Dev projeta"]
         A2 --> A3["Dev escreve código"]
@@ -236,7 +236,7 @@ flowchart LR
         A5 --> A6["Dev faz deploy"]
     end
 
-    subgraph depois ["Depois: Programação Agêntica"]
+    subgraph depois ["Depois"]
         direction TB
         B1["Dev define objetivo"] --> B2["Agente planeja"]
         B2 --> B3["Agente implementa"]
