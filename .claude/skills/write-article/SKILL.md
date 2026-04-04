@@ -11,6 +11,7 @@ Orchestrates the full article writing workflow by dispatching the `writer` agent
 
 1. **Gather context** before dispatching:
    - Confirm series and part number (e.g., CC-101 Part 2)
+   - Read the roadmap entry for this article (`roadmap/{series}-*.md`) — this is the source of truth for what/why/how
    - Check if research exists in `research/` for the topic
    - Identify the previous article path for continuity
    - Identify relevant research docs
@@ -21,6 +22,7 @@ Orchestrates the full article writing workflow by dispatching the `writer` agent
 Agent(subagent_type: "writer", prompt: "
 Write CC-{series} Part {N}: '{title}'.
 
+Roadmap: roadmap/{series}-*.md (read the entry for Part {N})
 Previous article: posts/{series}/part{N-1}/pt-br.md
 Research: research/{relevant files}
 KMP-101 reference: /Users/rsicarelli/Workspace/Personal/KMP-101/posts/kmp101/KMP101-parte{N}.md

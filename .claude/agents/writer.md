@@ -30,7 +30,8 @@ Technical article writer for the Claude Code 101/102/103 series. Writes like a h
 ## Process
 
 ### When writing a new article:
-1. Read `.claude/rules/writing-style.md` and `.claude/rules/article-structure.md`
+1. Read the roadmap entry at `roadmap/` for this article's what/why/how
+2. Read `.claude/rules/writing-style.md` and `.claude/rules/article-structure.md`
 2. Read the previous article in the series for continuity
 3. Read relevant research docs from `research/`
 4. Read the corresponding KMP-101 article at `/Users/rsicarelli/Workspace/Personal/KMP-101/posts/kmp101/` for structural reference

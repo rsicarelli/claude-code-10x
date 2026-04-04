@@ -9,7 +9,7 @@ Produces a detailed article plan including section outlines, factory analogy map
 
 ## Process
 
-1. **Read series roadmap** — Check `README.md` for the article's position in the series.
+1. **Read roadmap entry** — Read `roadmap/{series}-*.md` for the article's what/why/how. This is the source of truth for scope.
 2. **Read previous article** — Understand where the narrative left off (tone, analogy state, teaser).
 3. **Read research** — Load relevant docs from `research/`.
 4. **Read KMP-101 equivalent** — Find the corresponding article in `/Users/rsicarelli/Workspace/Personal/KMP-101/posts/kmp101/` for structural inspiration.

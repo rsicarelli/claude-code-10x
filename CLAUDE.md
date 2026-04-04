@@ -4,7 +4,8 @@ Article series on agentic programming. Published on [dev.to/rsicarelli](https://
 
 ## Quick reference
 
-- Series roadmap: `README.md`
+- Series roadmaps: `roadmap/` (source of truth for what each article covers)
+- Article index: `README.md`
 - Writing rules: `.claude/rules/`
 - Skills: `.claude/skills/`
 - Research: `research/`

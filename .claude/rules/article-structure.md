@@ -4,6 +4,8 @@ globs: posts/**/*.md
 
 # Article Structure
 
+Every article must align with its roadmap entry at `roadmap/`. The roadmap defines the scope (what/why/how) — the article structure rules define the format.
+
 Every article follows the KMP-101 template structure.
 
 ## Required sections (in order)
