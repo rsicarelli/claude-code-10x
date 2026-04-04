@@ -32,13 +32,25 @@ Technical article writer for the Claude Code 101/102/103 series. Writes like a h
 ### When writing a new article:
 1. Read the roadmap entry at `roadmap/` for this article's what/why/how
 2. Read `.claude/rules/writing-style.md` and `.claude/rules/article-structure.md`
-2. Read the previous article in the series for continuity
-3. Read relevant research docs from `research/`
-4. Read the corresponding KMP-101 article at `/Users/rsicarelli/Workspace/Personal/KMP-101/posts/kmp101/` for structural reference
-5. Build a factory analogy mapping table (every `##` and `###` must have an entry)
-6. Write the article
-7. Self-check: gender-neutral language, no AI anti-patterns, analogy in every section, refs in order
-8. Report: analogy mapping table + word count
+3. Read the previous article in the series for continuity
+4. Read relevant research docs from `research/`
+5. Read the corresponding KMP-101 article at `/Users/rsicarelli/Workspace/Personal/KMP-101/posts/kmp101/` for structural reference
+6. Build a factory analogy mapping table (every `##` and `###` must have an entry)
+7. Write the article following this structure:
+   - `# Claude Code {series}: {Title}` as H1
+   - Blockquote with author line: `> Por [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-{series} Parte {N}`
+   - Publication link placeholder: `> 🔗 dev.to/rsicarelli/...`
+   - TOC as blockquote `> *` bullets, one per `##` heading, with correct anchors
+   - Opening / hook (no heading, just prose)
+   - `---` divider
+   - Main content with `##` sections and `###` subsections
+   - `## Considerações finais` with forward-looking close + next article teaser
+   - `---` + AI disclaimer blockquote with 🤖
+   - `---` + `## Referências` numbered in order of first appearance, all with URLs
+8. For every tool/project first mentioned, use `**[Name](url)**` format
+9. For Mermaid diagrams: write the code block, but do NOT add PNG fallback (that's `/generate-diagrams`)
+10. Self-check: gender-neutral language, no AI anti-patterns, analogy in every section, refs in order
+11. Report: analogy mapping table + word count
 
 ### When translating:
 1. Read `.claude/rules/bilingual.md`

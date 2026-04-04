@@ -32,7 +32,58 @@ Write to: posts/{series}/part{N}/pt-br.md
 ")
 ```
 
-3. **After writer returns**, run `/audit-article` to validate the draft.
+3. **After writer returns**, run `/generate-diagrams` to create PNG assets from Mermaid blocks.
+
+4. **After diagrams generated**, run `/audit-article` to validate the draft.
+
+## Article format
+
+Every article must follow this exact structure:
+
+```markdown
+# Claude Code {series}: {Title}
+
+> Por [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-{series} Parte {N}
+>
+> 🔗 dev.to/rsicarelli/... <!-- link added after publication -->
+
+> * [Section 1](#anchor)
+> * [Section 2](#anchor)
+> * ...
+> * [Considerações finais](#considerações-finais)
+
+{Opening / hook}
+
+---
+
+## Section 1
+...
+## Considerações finais
+...
+
+---
+
+> 🤖 Este artigo foi escrito com assistência do Claude (Anthropic).
+>
+> Conteúdo pesquisado, verificado e editado por um humano.
+>
+> Encontrou algum erro ou crédito faltando? Me manda uma mensagem!
+
+---
+
+## Referências
+
+1. [Source](url) — description
+...
+```
+
+## Key patterns
+
+- **Header**: `#` title + blockquote with author, series, publication link
+- **TOC**: blockquote `> *` bullets with anchors matching every `##` heading
+- **Diagrams**: Mermaid code block + PNG fallback image below (run `/generate-diagrams` after writing)
+- **References**: numbered in order of first appearance, every one with a URL
+- **Tool hyperlinks**: first mention of every tool/project gets `**[Name](url)**`
 
 ## Rules
 
@@ -40,6 +91,7 @@ Write to: posts/{series}/part{N}/pt-br.md
 - PT-BR is always written first. English comes later via `/translate-article`.
 - If research is missing, suggest running `/research-deep-dive` first.
 - If no article plan exists, suggest running `/plan-article` first.
+- After writing, always run `/generate-diagrams` before `/audit-article`.
 
 ## Related skills
 
