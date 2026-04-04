@@ -18,6 +18,7 @@ Article series on agentic programming. Published on [dev.to/rsicarelli](https://
 - `/translate-article` — Create English version from PT-BR
 - `/research-deep-dive` — Research a topic and save findings
 - `/plan-article` — Create section-by-section outline with factory analogy mapping
+- `/generate-diagrams` — Extract Mermaid blocks and generate PNG assets
 - `/skill-conventions` — Guide for creating new skills
 
 ## Available agents
