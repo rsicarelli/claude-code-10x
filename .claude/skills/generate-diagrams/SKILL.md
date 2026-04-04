@@ -59,11 +59,11 @@ npx -y @mermaid-js/mermaid-cli \
 
 ## Configuration
 
-- **Theme:** dark
+- **Theme:** default (light)
 - **Scale:** 3 (retina quality)
 - **Width:** 1200px
 - **Tool:** `npx -y @mermaid-js/mermaid-cli` (no install needed)
-- **Config file:** `{"theme": "dark"}`
+- **Config file:** `{"theme": "default"}`
 
 ## Naming convention
 
