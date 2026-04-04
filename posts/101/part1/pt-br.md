@@ -97,20 +97,24 @@ Em 2024, a pergunta natural veio: **e se a IA pudesse fazer mais do que sugerir?
 Olhando pra trás, a evolução das ferramentas de IA para código segue quatro fases bem definidas. Cada fase é como um upgrade na fábrica: primeiro vem a esteira, depois o consultor, depois máquinas melhores, até chegar nas que operam sozinhas.
 
 ```mermaid
-flowchart TD
-    subgraph F1["Fase 1: Code Completion (2021-2022)"]
-        A1["Copilot v1, TabNine\nIA sugere a próxima linha\nAutonomia mínima"]
-    end
-    subgraph F2["Fase 2: Chat (2022-2023)"]
-        A2["ChatGPT, Claude\nIA conversa sobre código\nSem acesso ao projeto"]
-    end
-    subgraph F3["Fase 3: Multi-arquivo (2024)"]
-        A3["Cursor, Copilot Chat\nIA edita múltiplos arquivos\nOrquestração humana"]
-    end
-    subgraph F4["Fase 4: Agêntico (2024+)"]
-        A4["Claude Code, Agent Mode\nIA planeja e executa\nAutonomia com supervisão"]
-    end
-    F1 --> F2 --> F3 --> F4
+timeline
+    title A evolução da codificação com IA
+    section Fase 1
+        Code Completion (2021-2022) : Copilot v1, TabNine
+                                    : IA sugere a próxima linha
+                                    : Autonomia mínima
+    section Fase 2
+        Chat (2022-2023) : ChatGPT, Claude
+                         : IA conversa sobre código
+                         : Sem acesso ao projeto
+    section Fase 3
+        Multi-arquivo (2024) : Cursor, Copilot Chat
+                             : IA edita múltiplos arquivos
+                             : Orquestração humana
+    section Fase 4
+        Agêntico (2024+) : Claude Code, Agent Mode
+                         : IA planeja e executa
+                         : Autonomia com supervisão
 ```
 
 ![A evolução da codificação com IA](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-02-evolution-timeline.png?raw=true)
@@ -274,9 +278,9 @@ block-beta
     end
     space:3
 
-    P["Prompt Engineering\n(Comunicação)"]
-    C["Context Engineering\n(Informação)"]
-    H["Harness Engineering\n(Infraestrutura)"]
+    P["Prompt Engineering<br/>(Comunicação)"]
+    C["Context Engineering<br/>(Informação)"]
+    H["Harness Engineering<br/>(Infraestrutura)"]
 
     space:3
     block:bottom:3
