@@ -10,9 +10,9 @@ No prerequisites beyond basic software development experience. The series starts
 
 ---
 
-## Article 1: Introduction to Agentic Programming
+## Article 1: Introdução à Programação Agêntica
 
-**Status:** Draft complete (PT-BR)
+**Status:** Published (PT-BR + EN)
 
 ### What
 
@@ -28,7 +28,7 @@ Parallels KMP-101 Part 1 (paradigm introduction with comparative framework). The
 
 ---
 
-## Article 2: Demystifying Language Models
+## Article 2: Desmistificando os Modelos de Linguagem
 
 ### What
 
@@ -44,7 +44,7 @@ Factory analogy: "the engine of the machines." This article opens the hood and e
 
 ---
 
-## Article 3: Demystifying Claude Code — Internal Architecture
+## Article 3: Por dentro do Claude Code
 
 ### What
 
@@ -60,7 +60,7 @@ Factory analogy: "the control panel of the machine." You've seen the engine, now
 
 ---
 
-## Article 4: Understanding Context — The Context Window as Resource
+## Article 4: Context window: o recurso mais precioso do agente
 
 ### What
 
@@ -76,7 +76,7 @@ Factory analogy: "the fuel tank." Limited, expensive, and everything stops when 
 
 ---
 
-## Article 5: Setting Up and Exploring Claude Code
+## Article 5: Seu primeiro projeto com Claude Code
 
 ### What
 
@@ -92,7 +92,7 @@ Factory analogy: "starting the machine for the first time." You know the engine,
 
 ---
 
-## Article 6: Prompt Engineering for Agentic Programming
+## Article 6: A arte de dar instruções pro agente
 
 ### What
 
@@ -108,7 +108,7 @@ Factory analogy: "the control language — the instructions you give to the mach
 
 ---
 
-## Article 7: Context Engineering — What the Agent Needs to Know
+## Article 7: Ensinando o agente a trabalhar do seu jeito
 
 ### What
 
@@ -124,7 +124,7 @@ Factory analogy: "the documentation and specs you provide to the team." A brilli
 
 ---
 
-## Article 8: Harness Engineering — Configuring the Machine
+## Article 8: Harness: como o agente funciona e o que você configura
 
 ### What
 
