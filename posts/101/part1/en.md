@@ -196,7 +196,7 @@ The tools fall into three categories: **CLI** (terminal: Claude Code, Codex CLI,
 
 Here are the main ones:
 
-**[Claude Code](https://github.com/anthropics/claude-code)** operates in the terminal: reads the entire codebase, edits files, runs commands, creates commits, opens PRs. The code is available on GitHub (108K+ stars), though without a formal open-source license. It reached $2.5 billion in annual revenue in nine months, the fastest growth in enterprise software history [[15]](#references). It runs exclusively on Anthropic models (Opus, Sonnet, Haiku).
+**[Claude Code](https://github.com/anthropics/claude-code)** operates in the terminal: reads the entire codebase, edits files, runs commands, creates commits, opens PRs. The extensions and plugins are open source on GitHub (108K+ stars), though the core is source-available without a formal open-source license. It reached $2.5 billion in annual revenue in nine months, the fastest growth in enterprise software history [[15]](#references). It runs exclusively on Anthropic models (Opus, Sonnet, Haiku).
 
 **[Cursor](https://www.cursor.com/)** started as a VS Code fork rebuilt around AI, and now also has a [CLI](https://www.cursor.com/cli) for those who prefer the terminal. It supports Claude, GPT, and Gemini simultaneously. It went from $1M to $1B+ in annual revenue in under two years, with over 1 million daily active users [[5]](#references).
 
