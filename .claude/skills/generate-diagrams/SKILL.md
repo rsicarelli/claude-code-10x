@@ -36,6 +36,7 @@ npx -y @mermaid-js/mermaid-cli \
   -e png \
   --scale 3 \
   --width 1200 \
+  --backgroundColor transparent \
   --configFile /tmp/mermaid-gen/config.json
 ```
 
@@ -60,6 +61,7 @@ npx -y @mermaid-js/mermaid-cli \
 ## Configuration
 
 - **Theme:** dark
+- **Background:** transparent
 - **Scale:** 3 (retina quality)
 - **Width:** 1200px
 - **Tool:** `npx -y @mermaid-js/mermaid-cli` (no install needed)

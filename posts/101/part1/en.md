@@ -2,7 +2,9 @@
 
 > By [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-101 Part 1
 >
-> 🔗 dev.to/rsicarelli/...
+> 🔗 [dev.to/rsicarelli/claude-code-101-introduction-to-agentic-programming](https://dev.to/rsicarelli/claude-code-101-introduction-to-agentic-programming-3p83)
+>
+> 🇧🇷 [Leia em português](https://dev.to/rsicarelli/claude-code-101-introducao-a-programacao-agentica-4mk1)
 
 > * [Software development as we know it](#software-development-as-we-know-it)
 > * [The era of AI assistance](#the-era-of-ai-assistance)
