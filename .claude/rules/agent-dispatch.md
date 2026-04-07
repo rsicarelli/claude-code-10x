@@ -29,6 +29,13 @@ When verifying data points, dispatch the fact-checker:
 Agent(subagent_type: "fact-checker", prompt: "<file path + research directory>")
 ```
 
+## Illustration review
+When reviewing visual comprehension of an article, dispatch the illustration-reviewer via `/review-illustrations`:
+
+```
+Agent(subagent_type: "illustration-reviewer", prompt: "<file path + roadmap path + central analogy>")
+```
+
 ## Translating
 When creating the English version, dispatch the writer in translation mode via `/translate-article`:
 

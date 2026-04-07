@@ -18,6 +18,7 @@ Article series on agentic programming. Published on [dev.to/rsicarelli](https://
 - `/translate-article` — Create English version from PT-BR
 - `/research-deep-dive` — Research a topic and save findings
 - `/plan-article` — Create section-by-section outline with factory analogy mapping
+- `/review-illustrations` — Review article visuals for comprehension quality
 - `/generate-diagrams` — Extract Mermaid blocks and generate PNG assets
 - `/skill-conventions` — Guide for creating new skills
 
@@ -30,8 +31,9 @@ Article series on agentic programming. Published on [dev.to/rsicarelli](https://
 | `cohesion-reviewer` | sonnet | Checks narrative flow, analogy progression, transitions. Read-only. |
 | `convention-auditor` | haiku | Mechanical checks: TOC, refs, hyperlinks, word count. Read-only. |
 | `fact-checker` | sonnet | Verifies data points, quotes, dates against research and live sources. Read-only. |
+| `illustration-reviewer` | sonnet | Dissects sections and produces illustration briefs for visual comprehension. Read-only. |
 
-Agents are dispatched by skills, not manually. Use `/write-article`, `/audit-article`, `/translate-article` to trigger them.
+Agents are dispatched by skills, not manually. Use `/write-article`, `/audit-article`, `/translate-article`, `/review-illustrations` to trigger them.
 
 ## Series structure
 
