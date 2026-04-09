@@ -8,7 +8,7 @@
 > * [Quanto custa](#quanto-custa)
 > * [Considerações finais](#considerações-finais)
 
-No [artigo anterior](https://dev.to/rsicarelli/cc101-programacao-agentica), montamos a fábrica inteira: a evolução de produção manual pra máquinas autônomas, o ecossistema de ferramentas agênticas, os três pilares (prompt, context e harness engineering). Você sabe o que a fábrica faz, quem trabalha nela e até quanto fatura.
+No [artigo anterior](https://dev.to/rsicarelli/claude-code-101-introducao-a-programacao-agentica-4mk1), montamos a fábrica inteira: a evolução de produção manual pra máquinas autônomas, o ecossistema de ferramentas agênticas, os três pilares (prompt, context e harness engineering). Você sabe o que a fábrica faz, quem trabalha nela e até quanto fatura.
 
 Mas as máquinas da fábrica constroem coisas. E pra entender como elas constroem, a melhor analogia que eu conheço é LEGO. Peças padronizadas que se encaixam uma por vez, seguindo (ou não) um manual, numa mesa com espaço limitado. O resultado pode ser impressionante, mas a mecânica é simples: uma peça de cada vez.
 
@@ -20,6 +20,8 @@ Este é o segundo artigo da série **Claude Code 101**, e aqui a gente desmonta 
 
 Computadores não entendem texto. Entendem números. Antes que um modelo de linguagem processe qualquer coisa que você escreveu, cada palavra, espaço e pontuação precisa virar uma sequência de inteiros. Esses inteiros são os **tokens**: as peças padronizadas com as quais o modelo trabalha.
 
+![O que é um token](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image0.png?raw=true)
+
 Um token não é necessariamente uma palavra. Pode ser uma palavra inteira ("hello" vira 1 token), um pedaço de palavra ("tokenização" vira vários tokens), um caractere isolado ou até um byte. A regra prática pro inglês: **1 token corresponde a mais ou menos 4 caracteres**, ou cerca de 3/4 de uma palavra. Pro português, fica mais perto de 1 token pra cada 2.7 a 3 caracteres.
 
 ### Como o vocabulário é construído
@@ -28,10 +30,7 @@ A maioria dos LLMs usa um algoritmo chamado **BPE** (Byte Pair Encoding) pra mon
 
 O detalhe que importa: essa massa de textos é dominada por inglês. Palavras como "the", "and", "great" viram tokens únicos, peças inteiras. Palavras em português são fragmentadas em pedaços menores, como se o kit viesse com peças cortadas ao meio. Compare:
 
-```
-Inglês:    "Have a great day!"       → [Have] [a] [great] [day] [!]          = 5 tokens
-Português: "Tenha um ótimo dia!"     → [Ten][ha] [um] [ó][t][imo] [dia][!]  = 8 tokens
-```
+![Tokenização: inglês vs português](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image1.png?raw=true)
 
 O caractere "ó" sozinho já vira um token separado porque acentos aparecem pouco nos textos de treinamento. Não é detalhe técnico irrelevante. Afeta diretamente o seu bolso e a capacidade efetiva do modelo quando você trabalha em português.
 
@@ -48,8 +47,6 @@ Um estudo de Petrov et al. apresentado no NeurIPS 2023 mediu o que eles chamaram
 Os números do GPT-2 e GPT-4 vêm diretamente do estudo de Petrov et al. [[1]](#referências). A estimativa pro GPT-4o reflete a tendência de melhoria com vocabulários maiores, confirmada por estudos posteriores.
 
 A boa notícia: cada geração de tokenizer melhora essa disparidade. A notícia que importa: mesmo no melhor caso, português ainda consome pelo menos 30% mais peças que inglês pra construir a mesma coisa. Esse "imposto" vai reaparecer quando falarmos de context window e de custo, porque ele se acumula em cada interação.
-
-![Tokenização: inglês vs português](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image1.png?raw=true)
 
 ---
 
@@ -95,19 +92,12 @@ A mecânica é surpreendentemente simples. O modelo olha pra tudo que já está 
 
 Exemplo: o modelo recebe **"O céu está"** e precisa continuar.
 
-| Passo | O modelo vê | Candidatos mais prováveis | Escolhido |
-|---|---|---|---|
-| 1 | "O céu está ___" | "azul" (25%), "nublado" (15%), "claro" (12%) | **azul** |
-| 2 | "O céu está azul ___" | "e" (20%), "hoje" (15%), "." (10%) | **hoje** |
-| 3 | "O céu está azul hoje ___" | "." (35%), "," (12%) | **.** |
-
+![Geração autorregressiva](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image3.png?raw=true)
 Resultado: **"O céu está azul hoje."**
 
 Cada peça colocada depende de todas as anteriores: tanto o input original quanto o que o modelo já construiu. Por isso respostas às vezes começam bem e descarrilham no meio. O modelo não sabe onde vai terminar quando começa a gerar.
 
 Se você leu o [artigo anterior](https://dev.to/rsicarelli/cc101-programacao-agentica), pode reconhecer esse mecanismo. Lembra do autocomplete, a fase 1 da evolução? O code completion que sugeria a próxima linha no editor? O mecanismo por baixo é o mesmo: next-token prediction. A diferença é a escala. Modelos como o GPT-2 (2019) tinham 1,5 bilhão de parâmetros e uma mesa minúscula. O Claude Opus 4.6 opera numa escala completamente diferente, com uma janela de contexto mil vezes maior. O processo de montagem é o mesmo. A capacidade de construir coisas complexas é que mudou.
-
-![Geração autorregressiva](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image3.png?raw=true)
 
 ---
 
@@ -121,13 +111,13 @@ A resposta é o **mecanismo de atenção** (self-attention), introduzido no pape
 
 Imagine que o manual de montagem não mostra só o próximo passo. Pra cada peça nova, ele destaca quais partes da construção importam pra essa decisão: a base brilha forte (sustenta tudo), as torres ao redor acendem (definem o padrão), o jardim do outro lado fica apagado (irrelevante agora). O mecanismo de atenção faz exatamente isso: pra cada token, ele "acende" os anteriores que mais pesam e "apaga" os que não importam.
 
+![Mecanismo de atenção](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image4.png?raw=true)
+
 Antes dos Transformers, era como montar LEGO com alguém ditando as instruções: uma peça por vez, sem repetir, sem voltar atrás. Perdeu o passo 12? Já era. O Transformer é ter o manual inteiro aberto na mesa, todas as páginas visíveis ao mesmo tempo. Essa capacidade de processar tudo em paralelo foi o salto que viabilizou treinar modelos na escala atual.
 
 ### Desambiguação na prática
 
 Volte pro exemplo: "O banco está na margem do rio." O mecanismo de atenção faz com que o token "banco" preste muita atenção nos tokens "margem" e "rio", e pouca atenção em "está" e "na". É como numa montagem onde uma peça azul pode ser céu ou mar dependendo do que está ao redor. O contexto resolve a ambiguidade.
-
-![Mecanismo de atenção](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image4.png?raw=true)
 
 Esse mecanismo tem um preço. Pra cada peça na mesa, o modelo olha pra todas as outras antes de decidir o encaixe [[4]](#referências). Numa mesa com 10 peças, tranquilo. Numa mesa com 10 mil, cada decisão exige olhar pra 10 mil peças. Dobrar o tamanho da mesa não dobra o trabalho, quadruplica.
 
