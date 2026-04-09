@@ -1,3 +1,9 @@
+# Claude Code 101: Desmistificando os Modelos de Linguagem
+
+> Por [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-101 Parte 2
+>
+> 🔗 [dev.to/rsicarelli/claude-code-101-desmistificando-os-modelos-de-linguagem](https://dev.to/rsicarelli/claude-code-101-desmistificando-os-modelos-de-linguagem-5big)
+
 > * [O que é um token](#o-que-é-um-token)
 > * [A janela de contexto](#a-janela-de-contexto)
 > * [Como o modelo gera texto](#como-o-modelo-gera-texto)
@@ -221,6 +227,8 @@ Quando um modelo gera informação que parece correta mas é factualmente falsa,
 
 Se o padrão estatístico de "X escreveu o livro Y" é forte o bastante nos dados de treinamento, o modelo vai afirmar isso mesmo se for falso. Ele não tem um verificador de fatos interno. Não distingue entre gerar "Paris é a capital da França" e "Paris é a capital da Itália". Ambas são sequências de tokens plausíveis; uma é verdade, a outra não, e o modelo não sabe a diferença.
 
+![Limitações: alucinações e mesa limpa](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image7.png?raw=true)
+
 ### As limitações concretas
 
 O manual do modelo foi impresso numa data específica. Tudo que aconteceu depois não existe pra ele. E pior: no final de cada montagem, a mesa é limpa. A próxima conversa começa do zero, sem nenhuma peça da anterior. Se você precisa que o modelo lembre de algo, você mesmo precisa colocar de volta na mesa.
@@ -230,8 +238,6 @@ A boa notícia: com técnicas de Context Engineering e Harness Engineering (tema
 Matemática continua sendo um ponto fraco. O modelo pode montar uma conta que parece certa mas erra o resultado. Pra cálculos que exigem precisão, é mais seguro pedir pro modelo escrever código que faça a conta do que confiar na resposta direta.
 
 E no contexto de código, testes da Veracode mostraram que **45% do código gerado por IA contém falhas de segurança**, em avaliações com mais de 100 LLMs [[7]](#referências). O modelo monta rápido, mas se ninguém confere a construção, peças mal encaixadas vão parar no produto final.
-
-![Limitações: alucinações e mesa limpa](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image7.png?raw=true)
 
 ### O que está melhorando
 
