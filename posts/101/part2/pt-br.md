@@ -10,7 +10,7 @@
 
 No [artigo anterior](https://dev.to/rsicarelli/claude-code-101-introducao-a-programacao-agentica-4mk1), montamos a fábrica inteira: a evolução de produção manual pra máquinas autônomas, o ecossistema de ferramentas agênticas, os três pilares (prompt, context e harness engineering). Você sabe o que a fábrica faz, quem trabalha nela e até quanto fatura.
 
-Mas as máquinas da fábrica constroem coisas. E pra entender como elas constroem, a melhor analogia que eu conheço é LEGO. Peças padronizadas que se encaixam uma por vez, seguindo (ou não) um manual, numa mesa com espaço limitado. O resultado pode ser impressionante, mas a mecânica é simples: uma peça de cada vez.
+Mas as máquinas da fábrica constroem coisas. E pra entender como elas constroem, a melhor analogia que eu conheço é LEGO. Peças padronizadas que se encaixam uma por vez, seguindo (ou não) um manual, numa mesa com espaço limitado.
 
 Este é o segundo artigo da série **Claude Code 101**, e aqui a gente desmonta essa mecânica. O que são tokens, como funciona a context window, por que modelos geram texto do jeito que geram, e por que eles às vezes erram com uma confiança desconcertante.
 
@@ -78,9 +78,9 @@ Aqui entra um ponto que pouca gente discute. Ter uma mesa de 1 milhão de tokens
 
 Pesquisas recentes mostram que a capacidade do modelo de prestar atenção (attention, um conceito que vamos explorar logo abaixo) cai conforme o contexto cresce, especialmente pra informações posicionadas no meio do texto [[3]](#referências). O fenômeno tem até nome: **"lost in the middle"**. Na prática, a atenção efetiva do modelo é significativamente menor que a janela anunciada. O benchmark NoLiMa (ICML 2025) mostrou que a maioria dos LLMs erra mais da metade das vezes quando precisa encontrar uma informação específica em contextos a partir de 32K tokens [[9]](#referências).
 
-E aqui o imposto linguístico aparece de novo. Se a janela efetiva de um modelo com 200K tokens já é significativamente menor que o anunciado, pra conteúdo 100% em português, planeje com uma margem generosa de desconto. O espaço útil pode cair pra algo entre 80K e 90K tokens de conteúdo equivalente ao inglês. Peças maiores ocupam mais espaço na mesma superfície.
-
 ![A janela de contexto](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image2.png?raw=true)
+
+E aqui o imposto linguístico aparece de novo. Se a janela efetiva de um modelo com 200K tokens já é significativamente menor que o anunciado, pra conteúdo 100% em português, planeje com uma margem generosa de desconto. O espaço útil pode cair pra algo entre 80K e 90K tokens de conteúdo equivalente ao inglês. Peças maiores ocupam mais espaço na mesma superfície.
 
 ---
 
