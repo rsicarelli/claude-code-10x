@@ -2,7 +2,7 @@
 
 > By [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-101 Part 2
 >
-> 🔗 dev.to/rsicarelli/...
+> 🔗 [dev.to/rsicarelli/claude-code-101-demystifying-language-models](https://dev.to/rsicarelli/claude-code-101-demystifying-language-models-3h8o)
 >
 > 🇧🇷 [Leia em português](https://dev.to/rsicarelli/claude-code-101-desmistificando-os-modelos-de-linguagem-5big)
 

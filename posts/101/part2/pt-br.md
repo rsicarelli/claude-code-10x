@@ -3,6 +3,8 @@
 > Por [Rodrigo Sicarelli](https://dev.to/rsicarelli) · CC-101 Parte 2
 >
 > 🔗 [dev.to/rsicarelli/claude-code-101-desmistificando-os-modelos-de-linguagem](https://dev.to/rsicarelli/claude-code-101-desmistificando-os-modelos-de-linguagem-5big)
+>
+> 🌐 [Read in English](https://dev.to/rsicarelli/claude-code-101-demystifying-language-models-3h8o)
 
 > * [O que é um token](#o-que-é-um-token)
 > * [A janela de contexto](#a-janela-de-contexto)
