@@ -49,27 +49,7 @@ Os números do GPT-2 e GPT-4 vêm diretamente do estudo de Petrov et al. [[1]](#
 
 A boa notícia: cada geração de tokenizer melhora essa disparidade. A notícia que importa: mesmo no melhor caso, português ainda consome pelo menos 30% mais peças que inglês pra construir a mesma coisa. Esse "imposto" vai reaparecer quando falarmos de context window e de custo, porque ele se acumula em cada interação.
 
-```mermaid
-graph LR
-    subgraph EN["Inglês: 5 tokens"]
-        direction LR
-        E1["Have"] --> E2["a"]
-        E2 --> E3["great"]
-        E3 --> E4["day"]
-        E4 --> E5["!"]
-    end
-
-    subgraph PT["Português: 8 tokens"]
-        direction LR
-        P1["Ten"] --> P2["ha"]
-        P2 --> P3["um"]
-        P3 --> P4["ó"]
-        P4 --> P5["t"]
-        P5 --> P6["imo"]
-        P6 --> P7["dia"]
-        P7 --> P8["!"]
-    end
-```
+![Tokenização: inglês vs português](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image1.png?raw=true)
 
 ---
 
@@ -103,13 +83,7 @@ Pesquisas recentes mostram que a capacidade do modelo de prestar atenção (atte
 
 E aqui o imposto linguístico aparece de novo. Se a janela efetiva de um modelo com 200K tokens já é significativamente menor que o anunciado, pra conteúdo 100% em português, planeje com uma margem generosa de desconto. O espaço útil pode cair pra algo entre 80K e 90K tokens de conteúdo equivalente ao inglês. Peças maiores ocupam mais espaço na mesma superfície.
 
-```mermaid
-graph LR
-    subgraph mesa["A mesa do modelo"]
-        direction LR
-        A["🟢 Começo<br/>atenção forte"] --- B["🟡 Meio<br/>atenção fraca"] --- C["🟢 Final<br/>atenção forte"]
-    end
-```
+![A janela de contexto](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image2.png?raw=true)
 
 ---
 
@@ -133,15 +107,7 @@ Cada peça colocada depende de todas as anteriores: tanto o input original quant
 
 Se você leu o [artigo anterior](https://dev.to/rsicarelli/cc101-programacao-agentica), pode reconhecer esse mecanismo. Lembra do autocomplete, a fase 1 da evolução? O code completion que sugeria a próxima linha no editor? O mecanismo por baixo é o mesmo: next-token prediction. A diferença é a escala. Modelos como o GPT-2 (2019) tinham 1,5 bilhão de parâmetros e uma mesa minúscula. O Claude Opus 4.6 opera numa escala completamente diferente, com uma janela de contexto mil vezes maior. O processo de montagem é o mesmo. A capacidade de construir coisas complexas é que mudou.
 
-```mermaid
-flowchart LR
-    A["Tokens de input"] --> B["Calcular probabilidades<br/>~100K-260K opções"]
-    B --> C["Selecionar próximo token"]
-    C --> D["Adicionar à sequência"]
-    D --> E{Fim?}
-    E -->|Não| B
-    E -->|Sim| F["Resposta completa"]
-```
+![Geração autorregressiva](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image3.png?raw=true)
 
 ---
 
@@ -161,19 +127,7 @@ Antes dos Transformers, era como montar LEGO com alguém ditando as instruções
 
 Volte pro exemplo: "O banco está na margem do rio." O mecanismo de atenção faz com que o token "banco" preste muita atenção nos tokens "margem" e "rio", e pouca atenção em "está" e "na". É como numa montagem onde uma peça azul pode ser céu ou mar dependendo do que está ao redor. O contexto resolve a ambiguidade.
 
-```mermaid
-graph LR
-    O["O"] --- banco["banco"]
-    banco --- está["está"]
-    está --- na["na"]
-    na --- margem["margem"]
-    margem --- do["do"]
-    do --- rio["rio"]
-
-    banco -. "atenção forte" .-> margem
-    banco -. "atenção forte" .-> rio
-    banco -. "atenção fraca" .-> está
-```
+![Mecanismo de atenção](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image4.png?raw=true)
 
 Esse mecanismo tem um preço. Pra cada peça na mesa, o modelo olha pra todas as outras antes de decidir o encaixe [[4]](#referências). Numa mesa com 10 peças, tranquilo. Numa mesa com 10 mil, cada decisão exige olhar pra 10 mil peças. Dobrar o tamanho da mesa não dobra o trabalho, quadruplica.
 
@@ -205,6 +159,8 @@ A **temperatura** controla o quão fundo o modelo enfia a mão na caixa. No zero
 | 0.3 | "farinha de trigo, óleo de coco e cacau." | Pequenas variações |
 | 0.7 | "especiarias exóticas e um toque de limão siciliano." | Criativo |
 | 1.5 | "sonhos derretidos em caramelo de dragão." | Incoerente |
+
+![Temperatura: o quão fundo na caixa](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image5.png?raw=true)
 
 ### Top-p
 
@@ -259,6 +215,8 @@ Usar Opus pra classificar sentimento de tweets é como comprar um Technic de 4 m
 
 A regra prática: comece sempre pelo modelo mais barato que pode funcionar. Teste com Haiku, Flash ou mini. Se a qualidade não for suficiente, suba. Opus e o3-pro ficam reservados pra quando realmente necessário.
 
+![Famílias de modelos](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image6.png?raw=true)
+
 Mas independente do kit que você escolher, todos compartilham as mesmas limitações fundamentais.
 
 ---
@@ -283,6 +241,8 @@ Matemática continua sendo um ponto fraco. O modelo pode montar uma conta que pa
 
 E no contexto de código, testes da Veracode mostraram que **45% do código gerado por IA contém falhas de segurança**, em avaliações com mais de 100 LLMs [[7]](#referências). O modelo monta rápido, mas se ninguém confere a construção, peças mal encaixadas vão parar no produto final.
 
+![Limitações: alucinações e mesa limpa](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image7.png?raw=true)
+
 ### O que está melhorando
 
 Mas a comunidade não tá parada. As melhorias estão vindo de várias frentes ao mesmo tempo: modelos que "pensam passo a passo" antes de montar, reduzindo erros em tarefas complexas. Sistemas que preenchem a mesa automaticamente com as peças certas pro seu projeto, em vez de você colocar tudo na mão. Agentes que lembram das montagens anteriores e aprendem com elas. E uma infraestrutura que fica mais rápida e mais barata a cada geração.
@@ -296,6 +256,8 @@ Mesmo com essas limitações, os modelos estão sendo usados em escala. E escala
 ## Quanto custa
 
 Cada peça custa dinheiro. LLMs são cobrados por token processado, dividido em duas categorias: **input tokens** (tudo que você envia) e **output tokens** (o que o modelo gera). Construir algo novo (output) sempre custa mais que consultar o que já existe (input), geralmente entre 3x e 5x o preço [[8]](#referências). Faz sentido: gerar cada token exige um forward pass completo pelo modelo.
+
+![Input vs Output: consultar vs construir](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image8.png?raw=true)
 
 ### Tabela de preços (abril 2026)
 
@@ -318,6 +280,8 @@ Repare na coluna "Cache read". Ela vai ser importante daqui a pouco.
 Lembra do custo de tokenização do português? Ele se traduz diretamente em dinheiro. Pro mesmo conteúdo, aplicações em português custam entre **30% e 50% a mais** em tokens de input do que a mesma aplicação em inglês, dependendo do tokenizer. Numa conta de $5.000/mês, isso representa entre $1.150 e $1.650 extras só por causa do idioma.
 
 Ao longo deste artigo, um fio conecta três seções: o português consome mais peças pra construir a mesma coisa (seção 1), isso ocupa mais espaço na mesa (seção 2), e agora cobra mais caro (aqui). Não são três problemas. É o mesmo problema, em três camadas.
+
+![O imposto linguístico em três camadas](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part2/assets/pt-br/part2-image9.png?raw=true)
 
 ### Como otimizar
 
