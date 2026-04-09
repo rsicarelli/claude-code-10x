@@ -82,7 +82,7 @@ sequenceDiagram
     Note over Dev: In both cases: the developer<br/>remains the central executor
 ```
 
-![Autocomplete vs Chat](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-01-autocomplete-vs-chat-en.png?raw=true)
+![Autocomplete vs Chat](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/en/part1-01-autocomplete-vs-chat-fd31.png?raw=true)
 
 ### Why assistance wasn't enough
 
@@ -119,7 +119,7 @@ timeline
                          : Autonomy with oversight
 ```
 
-![The Evolution of AI-Assisted Coding](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-02-evolution-timeline-en.png?raw=true)
+![The Evolution of AI-Assisted Coding](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/en/part1-02-evolution-timeline-1de7.png?raw=true)
 
 We've already covered phases 1 and 2. The real leap starts at phase 3.
 
@@ -162,7 +162,7 @@ flowchart TD
     G --> H["👨‍💻 Dev reviews and approves"]
 ```
 
-![The agentic loop](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-03-agentic-loop-en.png?raw=true)
+![The agentic loop](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/en/part1-03-agentic-loop-a4aa.png?raw=true)
 
 This is where the factory analogy changes completely. You're no longer on the production line tightening bolts and moving parts. Now you **design** the factory. You program the machines, set up quality controls, oversee production. The agents execute, report problems, and self-correct. Your productivity is no longer limited by the speed of your hands; it depends on the quality of your instructions.
 
@@ -250,7 +250,7 @@ flowchart LR
     before ~~~ after
 ```
 
-![Before vs After](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-04-before-after-en.png?raw=true)
+![Before vs After](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/en/part1-04-before-after-8e44.png?raw=true)
 
 I know what you might be thinking: "so the AI does the work and I just... do what?"
 
@@ -297,7 +297,7 @@ block-beta
     H --> bottom
 ```
 
-![The three pillars](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-05-three-pillars-en.png?raw=true)
+![The three pillars](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/en/part1-05-three-pillars-3866.png?raw=true)
 
 ### The numbers: good and bad
 

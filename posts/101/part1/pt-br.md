@@ -82,7 +82,7 @@ sequenceDiagram
     Note over Dev: Em ambos: quem desenvolve<br/>permanece como executor central
 ```
 
-![Autocomplete vs Chat](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-01-autocomplete-vs-chat.png?raw=true)
+![Autocomplete vs Chat](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/pt-br/part1-01-autocomplete-vs-chat-9413.png?raw=true)
 
 ### Por que assistência não bastava
 
@@ -119,7 +119,7 @@ timeline
                          : Autonomia com supervisão
 ```
 
-![A evolução da codificação com IA](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-02-evolution-timeline.png?raw=true)
+![A evolução da codificação com IA](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/pt-br/part1-02-evolution-timeline-e86c.png?raw=true)
 
 As fases 1 e 2 já vimos. O salto real começa na fase 3.
 
@@ -162,7 +162,7 @@ flowchart TD
     G --> H["👨‍💻 Dev revisa e aprova"]
 ```
 
-![O loop agêntico](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-03-agentic-loop.png?raw=true)
+![O loop agêntico](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/pt-br/part1-03-agentic-loop-49e9.png?raw=true)
 
 Aqui é onde a analogia da fábrica muda completamente. Você não está mais na linha de produção apertando parafuso e movendo peça. Agora você **projeta** a fábrica. Programa as máquinas, configura os controles de qualidade, supervisiona a produção. Os agentes executam, reportam problemas e se autocorrigem. Sua produtividade deixa de ser limitada pela velocidade das suas mãos e passa a depender da qualidade das suas instruções.
 
@@ -250,7 +250,7 @@ flowchart LR
     antes ~~~ depois
 ```
 
-![Antes vs Depois](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-04-before-after.png?raw=true)
+![Antes vs Depois](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/pt-br/part1-04-before-after-ee3b.png?raw=true)
 
 Eu sei o que você pode estar pensando: "então a IA faz o trabalho e eu fico... fazendo o quê?"
 
@@ -297,7 +297,7 @@ block-beta
     H --> bottom
 ```
 
-![Os três pilares](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/assets/cc101-part1-05-three-pillars.png?raw=true)
+![Os três pilares](https://github.com/rsicarelli/claude-code-10x/blob/main/posts/101/part1/assets/pt-br/part1-05-three-pillars-1e08.png?raw=true)
 
 ### Os números — bons e ruins
 
