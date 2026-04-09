@@ -4,6 +4,29 @@ Style guide for all images: flat design infographic style, clean lines, vibrant 
 
 ---
 
+## 0. What is a token: text becomes pieces
+
+Horizontal illustration read left to right, showing the transformation of text into tokens. All text in English.
+
+On the left side, a sentence written in plain text as if typed on a screen: "I love chocolate cake". The text is in clean, black font, no decoration.
+
+In the center, a wide arrow pointing right with the word "tokenization" written inside the arrow.
+
+On the right side, the same sentence broken down into individual LEGO bricks arranged in a horizontal row. Each brick shows two pieces of information: the text fragment written on the top face of the brick, and an integer number (token ID) written on the front face of the brick. The bricks have different sizes depending on the fragment:
+
+- Large brick (yellow): "I" / ID: 40
+- Large brick (blue): " love" / ID: 3021
+- Large brick (green): " chocolate" / ID: 28401
+- Large brick (red): " cake" / ID: 11884
+
+Below the row of bricks, the text: "Computers don't understand text. They understand numbers."
+
+Below that, a smaller second line showing granularity variation: the word "tokenization" alone, broken into 4 small bricks: "token" / "iza" / "tion" — with an annotation: "One word can become multiple pieces."
+
+Flat infographic style, white background, LEGO bricks with visible studs on top. Token IDs are invented but plausible numbers (3-5 digits). No arrows besides the central transformation arrow. No text in any other language.
+
+---
+
 ## 1. Tokenization: English vs Portuguese
 
 A clean side-by-side infographic comparing English and Portuguese tokenization using LEGO bricks. Left panel labeled "English" with a blue header: a horizontal row of 5 large, wide LEGO bricks in solid colors (blue, green, yellow, teal, gray), each brick has a word printed on it: "Have", "a", "great", "day", "!". Below the row: "5 tokens". Right panel labeled "Portuguese" with an orange header: a horizontal row of 8 noticeably narrower and smaller LEGO bricks: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". The bricks for "ó" and "t" are visibly the smallest. Below the row: "8 tokens". Above each row, the full sentence is printed: "Have a great day!" and "Tenha um ótimo dia!". Between the two panels, centered text: "+60% more pieces to say the same thing". Flat design, no arrows, no flow lines, just bricks as objects on a white background.
@@ -18,7 +41,17 @@ A top-down perspective view of a rectangular table surface with a subtle 3D tilt
 
 ## 3. Autoregressive Generation: one piece at a time
 
-A comic-strip style illustration with three horizontal panels side by side, each showing a LEGO table surface from a slight top-down angle. Panel 1 labeled "Step 1": two LEGO bricks on the table labeled "The" and "sky", with an empty slot marked "?" to the right. Below the table, three candidate bricks float: "is (30%)" in green and largest, "was (18%)" in yellow, "looks (10%)" in gray. A dotted arrow from "is" points up to the slot. Panel 2 labeled "Step 2": three bricks on table "The", "sky", "is", empty slot with "?". Below: candidates "blue (25%)", "clear (15%)", "dark (10%)". Arrow from "blue" to the slot. Panel 3 labeled "Step 3": four bricks "The", "sky", "is", "blue", slot with "?". Below: ". (35%)" largest, "today (20%)" medium, ", (8%)" smaller. Arrow from "today" to slot. Below all three panels, a bold caption: "No plan. One piece at a time. Always." Flat design, consistent colors across panels, clean labels.
+Comic-strip style illustration with three horizontal panels side by side. Each panel shows a LEGO baseplate (surface with studs) seen from above at a slight angle. All text in English. The data below must be followed EXACTLY as written.
+
+Panel 1 — title "Step 1" at the top: three gray LEGO bricks already placed on the baseplate, labeled "The", "sky", "is". To their right, an empty slot marked with "?". Below the baseplate, three candidate bricks float: a green brick with "blue (25%)" is the largest and most prominent; a yellow brick with "cloudy (15%)"; a light gray brick with "clear (12%)". A dotted arrow goes from "blue" upward toward the empty slot.
+
+Panel 2 — title "Step 2" at the top: four bricks on the baseplate: "The", "sky", "is", "blue" (this last one in green). Empty slot with "?" to the right. Below, candidates: "and (20%)", "today (15%)", ". (10%)". Dotted arrow from "today" to the empty slot.
+
+Panel 3 — title "Step 3" at the top: five bricks on the baseplate: "The", "sky", "is", "blue", "today". Empty slot with "?" to the right. Below, candidates: ". (35%)" largest, ", (12%)" smaller. Dotted arrow from "." to the empty slot.
+
+Below all three panels, centered bold caption: "No plan. One piece at a time. Always."
+
+Flat infographic style, consistent colors across panels, clean labels. White background.
 
 ---
 

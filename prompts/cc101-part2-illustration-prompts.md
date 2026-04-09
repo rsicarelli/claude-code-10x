@@ -4,6 +4,29 @@ Style guide for all images: flat design infographic style, clean lines, vibrant 
 
 ---
 
+## 0. O que é um token: texto vira peças
+
+Ilustração horizontal lida da esquerda pra direita, mostrando a transformação de texto em tokens. Toda a imagem em português.
+
+No lado esquerdo, uma frase escrita em texto normal, como se fosse digitada numa tela: "Eu gosto de chocolate". O texto está em fonte limpa, preta, sem decoração.
+
+No centro, uma seta larga apontando pra direita com o texto "tokenização" escrito dentro da seta.
+
+No lado direito, a mesma frase desmontada em peças LEGO individuais dispostas numa fileira horizontal. Cada peça tem duas informações visíveis: o fragmento de texto escrito na face de cima da peça, e o número inteiro (ID do token) escrito na face frontal da peça. As peças têm tamanhos diferentes dependendo do fragmento:
+
+- Peça grande (amarela): "Eu" / ID: 15711
+- Peça grande (azul): " gosto" / ID: 45892
+- Peça pequena (verde): " de" / ID: 347
+- Peça grande (vermelha): " chocolate" / ID: 28401
+
+Abaixo da fileira de peças, o texto: "Computadores não entendem texto. Entendem números."
+
+Abaixo disso, uma segunda linha menor mostrando a variação de granularidade: a palavra "tokenização" sozinha, desmontada em 4 peças pequenas: "token" / "iza" / "ção" — com uma anotação: "Uma palavra pode virar várias peças."
+
+Estilo infográfico flat, fundo branco, peças LEGO com studs visíveis no topo. Os IDs dos tokens são números inventados mas plausíveis (5 dígitos). Sem setas além da seta central de transformação. Sem texto em inglês.
+
+---
+
 ## 1. Tokenização: inglês vs português
 
 A clean side-by-side infographic comparing English and Portuguese tokenization using LEGO bricks. Left panel labeled "Inglês" with a blue header: a horizontal row of 5 large, wide LEGO bricks in solid colors (blue, green, yellow, teal, gray), each brick has a word printed on it: "Have", "a", "great", "day", "!". Below the row: "5 tokens". Right panel labeled "Português" with an orange header: a horizontal row of 8 noticeably narrower and smaller LEGO bricks: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". The bricks for "ó" and "t" are visibly the smallest. Below the row: "8 tokens". Above each row, the full sentence is printed: "Have a great day!" and "Tenha um ótimo dia!". Between the two panels, centered text: "+60% mais peças pra dizer a mesma coisa". Flat design, no arrows, no flow lines, just bricks as objects on a white background.
@@ -18,7 +41,17 @@ A top-down perspective view of a rectangular table surface (the "mesa") with a s
 
 ## 3. Geração autorregressiva: uma peça por vez
 
-A comic-strip style illustration with three horizontal panels side by side, each showing a LEGO mesa (table surface) from a slight top-down angle. Panel 1 labeled "Passo 1": two LEGO bricks on the table labeled "O" and "céu", with an empty slot marked "?" to the right. Below the table, three candidate bricks float: "azul (25%)" in green and largest, "nublado (15%)" in yellow, "claro (12%)" in gray. A dotted arrow from "azul" points up to the slot. Panel 2 labeled "Passo 2": three bricks on table "O", "céu", "azul", empty slot with "?". Below: candidates "e (20%)", "hoje (15%)", ". (10%)". Arrow from "hoje" to the slot. Panel 3 labeled "Passo 3": four bricks "O", "céu", "azul", "hoje", slot with "?". Below: ". (35%)" largest, ", (12%)" smaller. Arrow from "." to slot. Below all three panels, a bold caption: "Sem plano. Uma peça por vez. Sempre." Flat design, consistent colors across panels, clean labels.
+Ilustração estilo comic-strip com três painéis horizontais lado a lado. Cada painel mostra uma superfície LEGO (base com studs) vista de cima com leve ângulo. Toda a imagem em português. Os dados abaixo devem ser seguidos EXATAMENTE como escritos.
+
+Painel 1 — título "Passo 1" no topo: três peças LEGO cinza já encaixadas na base, com os textos "O", "céu", "está". À direita delas, um espaço vazio marcado com "?". Abaixo da base, três peças candidatas flutuam: uma peça verde com "azul (25%)" é a maior e mais destacada; uma peça amarela com "nublado (15%)"; uma peça cinza clara com "claro (12%)". Uma seta pontilhada sai de "azul" e aponta pra cima em direção ao espaço vazio.
+
+Painel 2 — título "Passo 2" no topo: quatro peças na base: "O", "céu", "está", "azul" (esta última em verde). Espaço vazio com "?" à direita. Abaixo, candidatas: "e (20%)", "hoje (15%)", ". (10%)". Seta pontilhada de "hoje" pro espaço vazio.
+
+Painel 3 — título "Passo 3" no topo: cinco peças na base: "O", "céu", "está", "azul", "hoje". Espaço vazio com "?" à direita. Abaixo, candidatas: ". (35%)" maior, ", (12%)" menor. Seta pontilhada de "." pro espaço vazio.
+
+Abaixo dos três painéis, legenda centralizada em negrito: "Sem plano. Uma peça por vez. Sempre."
+
+Estilo infográfico flat, cores consistentes entre painéis, labels limpos. Fundo branco.
 
 ---
 
