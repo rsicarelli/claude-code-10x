@@ -29,7 +29,17 @@ Estilo infográfico flat, fundo branco, peças LEGO com studs visíveis no topo.
 
 ## 1. Tokenização: inglês vs português
 
-A clean side-by-side infographic comparing English and Portuguese tokenization using LEGO bricks. Left panel labeled "Inglês" with a blue header: a horizontal row of 5 large, wide LEGO bricks in solid colors (blue, green, yellow, teal, gray), each brick has a word printed on it: "Have", "a", "great", "day", "!". Below the row: "5 tokens". Right panel labeled "Português" with an orange header: a horizontal row of 8 noticeably narrower and smaller LEGO bricks: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". The bricks for "ó" and "t" are visibly the smallest. Below the row: "8 tokens". Above each row, the full sentence is printed: "Have a great day!" and "Tenha um ótimo dia!". Between the two panels, centered text: "+60% mais peças pra dizer a mesma coisa". Flat design, no arrows, no flow lines, just bricks as objects on a white background.
+Infográfico lado a lado comparando a tokenização do inglês e do português. Toda a imagem em português.
+
+IMPORTANTE: Todas as peças LEGO devem ser planas e horizontais, como tijolos LEGO clássicos 2x4 vistos de frente. Cada peça é LARGA e BAIXA (aproximadamente 4x mais larga que alta). Elas ficam lado a lado numa única fileira horizontal, como azulejos num piso. NÃO verticais, NÃO colunas altas.
+
+Painel esquerdo com cabeçalho azul "Inglês": a frase completa "Have a great day!" escrita acima. Abaixo, uma única fileira horizontal de 5 peças planas e largas encostadas lado a lado. Todas têm a mesma altura mas largura proporcional ao tamanho da palavra. Cores: azul "Have", verde "a" (mais estreita), amarelo "great", azul-petróleo "day", cinza "!". Abaixo da fileira: "5 tokens".
+
+Painel direito com cabeçalho laranja "Português": a frase completa "Tenha um ótimo dia!" escrita acima. Abaixo, uma única fileira horizontal de 8 peças planas encostadas lado a lado. Essas peças são visivelmente MAIS ESTREITAS que as inglesas porque o mesmo conteúdo é dividido em mais pedaços. Cores variadas. Labels: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". As peças de "ó" e "t" são as mais estreitas de todas. Abaixo da fileira: "8 tokens".
+
+Entre os dois painéis, texto centralizado: "+60% mais peças pra dizer a mesma coisa".
+
+Estilo infográfico flat, fundo branco, sem setas, sem linhas de fluxo. O contraste visual principal é que inglês tem menos peças mais largas e português tem mais peças mais estreitas — todas na mesma altura.
 
 ---
 

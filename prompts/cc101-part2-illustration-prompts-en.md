@@ -1,6 +1,6 @@
 # CC-101 Part 2 — Illustration Prompts for Gemini Image Generation (English)
 
-Style guide for all images: flat design infographic style, clean lines, vibrant but not neon colors, white or very light gray background, LEGO-inspired brick shapes (rounded rectangular blocks with visible studs on top), no photorealism, no 3D rendering, minimal shadows, clear readable labels in English, consistent color palette across all images (blue for English, orange for Portuguese, green for correct/selected, red for wrong/danger, gray for neutral).
+Style guide for all images: flat design infographic style, clean lines, vibrant but not neon colors, white or very light gray background. All LEGO bricks must look like classic LEGO 2x4 bricks: flat, wide, and low-profile. Each brick should be approximately 4 times wider than it is tall. Think of them as flat rectangular plates with small round studs on top, NOT cubes or tall blocks. The proportions should match a real LEGO brick lying flat on a table. No photorealism, no 3D rendering, minimal shadows, clear readable labels in English. Consistent color palette: blue for English, orange for Portuguese, green for correct/selected, red for wrong/danger, gray for neutral.
 
 ---
 
@@ -29,7 +29,17 @@ Flat infographic style, white background, LEGO bricks with visible studs on top.
 
 ## 1. Tokenization: English vs Portuguese
 
-A clean side-by-side infographic comparing English and Portuguese tokenization using LEGO bricks. Left panel labeled "English" with a blue header: a horizontal row of 5 large, wide LEGO bricks in solid colors (blue, green, yellow, teal, gray), each brick has a word printed on it: "Have", "a", "great", "day", "!". Below the row: "5 tokens". Right panel labeled "Portuguese" with an orange header: a horizontal row of 8 noticeably narrower and smaller LEGO bricks: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". The bricks for "ó" and "t" are visibly the smallest. Below the row: "8 tokens". Above each row, the full sentence is printed: "Have a great day!" and "Tenha um ótimo dia!". Between the two panels, centered text: "+60% more pieces to say the same thing". Flat design, no arrows, no flow lines, just bricks as objects on a white background.
+Side-by-side infographic comparing English and Portuguese tokenization. All text in English.
+
+IMPORTANT: All LEGO bricks must be flat and horizontal, like classic 2x4 LEGO bricks seen from the front. Each brick is WIDE and SHORT (roughly 4x wider than tall). They are laid side by side in a single horizontal row, like tiles on a floor. NOT vertical, NOT tall columns.
+
+Left panel with a blue header labeled "English": the full sentence "Have a great day!" printed above. Below it, a single horizontal row of 5 flat wide bricks touching side by side. Each brick is the same height but varies in width proportional to the word length. Colors: blue "Have", green "a" (narrower), yellow "great", teal "day", gray "!". Below the row: "5 tokens".
+
+Right panel with an orange header labeled "Portuguese": the full sentence "Tenha um ótimo dia!" printed above. Below it, a single horizontal row of 8 flat wide bricks touching side by side. These bricks are noticeably NARROWER than the English ones because the same content is split into more pieces. Colors vary. Labels: "Ten", "ha", "um", "ó", "t", "imo", "dia", "!". The bricks for "ó" and "t" are the narrowest of all. Below the row: "8 tokens".
+
+Between the two panels, centered text: "+60% more pieces to say the same thing".
+
+Flat infographic style, white background, no arrows, no flow lines. The key visual contrast is that English has fewer, wider bricks and Portuguese has more, narrower bricks — all at the same height.
 
 ---
 
@@ -41,17 +51,15 @@ A top-down perspective view of a rectangular table surface with a subtle 3D tilt
 
 ## 3. Autoregressive Generation: one piece at a time
 
-Comic-strip style illustration with three horizontal panels side by side. Each panel shows a LEGO baseplate (surface with studs) seen from above at a slight angle. All text in English. The data below must be followed EXACTLY as written.
+Three-panel illustration showing a LEGO model being built one brick at a time. Flat infographic style, white background.
 
-Panel 1 — title "Step 1" at the top: three gray LEGO bricks already placed on the baseplate, labeled "The", "sky", "is". To their right, an empty slot marked with "?". Below the baseplate, three candidate bricks float: a green brick with "blue (25%)" is the largest and most prominent; a yellow brick with "cloudy (15%)"; a light gray brick with "clear (12%)". A dotted arrow goes from "blue" upward toward the empty slot.
+Panel 1 "Step 1": LEGO bricks labeled "The", "sky", "is" are already placed in a row. An empty spot with "?" next to them. Below, three loose bricks are the options: "blue (25%)", "cloudy (15%)", "clear (12%)". An arrow shows "blue" being chosen.
 
-Panel 2 — title "Step 2" at the top: four bricks on the baseplate: "The", "sky", "is", "blue" (this last one in green). Empty slot with "?" to the right. Below, candidates: "and (20%)", "today (15%)", ". (10%)". Dotted arrow from "today" to the empty slot.
+Panel 2 "Step 2": Now "The", "sky", "is", "blue" are placed. Empty spot with "?". Options below: "and (20%)", "today (15%)", ". (10%)". Arrow shows "today" being chosen.
 
-Panel 3 — title "Step 3" at the top: five bricks on the baseplate: "The", "sky", "is", "blue", "today". Empty slot with "?" to the right. Below, candidates: ". (35%)" largest, ", (12%)" smaller. Dotted arrow from "." to the empty slot.
+Panel 3 "Step 3": Now "The", "sky", "is", "blue", "today" are placed. Empty spot with "?". Options below: ". (35%)", ", (12%)". Arrow shows "." being chosen.
 
-Below all three panels, centered bold caption: "No plan. One piece at a time. Always."
-
-Flat infographic style, consistent colors across panels, clean labels. White background.
+Caption at the bottom: "No plan. One piece at a time. Always."
 
 ---
 
@@ -82,7 +90,7 @@ All labels must be right-aligned to the right of the box, vertically centered on
 
 ## 6. Model Families: from Duplo to Technic
 
-A horizontal spectrum bar running left to right on a white background. Left end labeled "Faster / cheaper", right end labeled "More capable / more expensive". Above the spectrum, four LEGO kit boxes are positioned at different points along it, each drawn to look like a simplified LEGO product box. Box 1 (far left, light blue): "Fast Models" — shows large simple Duplo-style bricks on the box art. Below: "Haiku · GPT-4o-mini · Flash" and "$0.15–$1/MTok". Box 2 (center-left, teal): "Code Models" — shows medium regular LEGO bricks. Below: "GPT-4.1 · Claude Code". Box 3 (center-right, dark blue): "Reasoning Models" — shows Technic gears and axles on box art. Below: "Opus · o3-pro · Gemini 2.5 Pro" and "$1.25–$20/MTok". Box 4 (far right, slightly below the spectrum, green): "Open-weight" — shows an open box with all pieces visible and exposed. Below: "Llama 4 · DeepSeek R1" and "You build, tweak, and adapt." Below the entire spectrum, a rule in bold: "Start with the cheapest that works. Scale up only if needed." Flat infographic style, clean product-box silhouettes.
+A horizontal spectrum bar running left to right on a white background. Left end labeled "Faster / cheaper", right end labeled "More capable / more expensive". Above the spectrum, four LEGO kit boxes are positioned at different points along it, each drawn to look like a simplified LEGO product box. Box 1 (far left, light blue): "Fast Models" — shows large simple Duplo-style bricks on the box art. Below: "Haiku · GPT-4o-mini · Flash". Box 2 (center-left, teal): "Code Models" — shows medium regular LEGO bricks. Below: "GPT-4.1 · Sonnet". Box 3 (center-right, dark blue): "Reasoning Models" — shows Technic gears and axles on box art. Below: "Opus · o3-pro · Gemini 2.5 Pro". Box 4 (far right, slightly below the spectrum, green): "Open-weight" — shows an open box with all pieces visible and exposed. Below: "Llama 4 · DeepSeek R1" and "You build, tweak, and adapt." Below the entire spectrum, a rule in bold: "Start with the cheapest that works. Scale up only if needed." Flat infographic style, clean product-box silhouettes.
 
 ---
 
